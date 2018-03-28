@@ -14,11 +14,11 @@ public class JsonUtils {
     public static Sandwich parseSandwichJson(String json) throws JSONException {
         Sandwich sandwich = new Sandwich();
         JSONObject sandwichDetails = new JSONObject(json);
-        sandwich.setDescription(sandwichDetails.getString("description"));
-        sandwich.setImage(sandwichDetails.getString("image"));
-        sandwich.setPlaceOfOrigin(sandwichDetails.getString("placeOfOrigin"));
+        sandwich.setDescription(sandwichDetails.optString("description"));
+        sandwich.setImage(sandwichDetails.optString("image"));
+        sandwich.setPlaceOfOrigin(sandwichDetails.optString("placeOfOrigin"));
         JSONObject name = sandwichDetails.getJSONObject("name");
-        sandwich.setMainName(name.getString("mainName"));
+        sandwich.setMainName(name.optString("mainName"));
         sandwich.setAlsoKnownAs(convertJSONArrayToList(name.getJSONArray("alsoKnownAs")));
         sandwich.setIngredients(convertJSONArrayToList(sandwichDetails.getJSONArray("ingredients")));
         return  sandwich;

@@ -5,12 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.udacity.sandwichclub.DetailActivity">
-
+    tools:context="com.udacity.sandwichclub.DetailActivity"
+    android:paddingLeft="6dp"
+    android:paddingRight="6dp">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <ImageView
         android:id="@+id/image_iv"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="@dimen/iv_hight"
         android:adjustViewBounds="true"
         android:contentDescription="@string/sandwich_picture_content_description"
         android:scaleType="centerCrop" />
@@ -51,15 +55,12 @@
             android:textStyle="bold"
             android:layout_gravity="center"/>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
         <TextView
             android:id="@+id/description_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"/>
-    </ScrollView>
 
         <TextView
             android:id="@+id/ingredients_label_tv"
@@ -74,4 +75,5 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"/>
+</ScrollView>
 </LinearLayout>
